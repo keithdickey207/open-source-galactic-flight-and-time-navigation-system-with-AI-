@@ -1,0 +1,229 @@
+{
+  "hub": "penguin",
+  "main_command_node": "penguin",
+  "command_node": {
+    "host_id": "dell-3910-flex",
+    "role": "main_command_node",
+    "hardware": "Dell OptiPlex 3910",
+    "os": "Chrome OS Flex beta + Crostini penguin",
+    "authority": [
+      "code_execution",
+      "stack_updates",
+      "mesh_registry",
+      "gods_eye_host"
+    ]
+  },
+  "ports": {
+    "gnss_udp": 2368,
+    "rf_udp": 2370,
+    "thermal_udp": 2371,
+    "defense_udp": 2372,
+    "gns_websocket": 8765,
+    "earth_ui": 5173,
+    "command_hub": 5090,
+    "gods_eye_defense": 8787,
+    "pixel_tcp_legacy": 9876,
+    "weaver_udp": 8080,
+    "aether_protocol": 42420
+  },
+  "devices": {
+    "penguin": {
+      "role": "main_command_node",
+      "tailscale_ip": "100.95.99.98",
+      "hostname": "penguin",
+      "platform": "chromeos_flex_crostini",
+      "status": "online",
+      "services": [
+        "code_execution",
+        "command_hub",
+        "district_bridge",
+        "earth_ui",
+        "gods_eye_defense",
+        "mesh_registry",
+        "sovereign_defense",
+        "stack_updates"
+      ],
+      "notes": "MAIN COMMAND NODE \u2014 hosts God's Eye Defense v7.1 :8787 + Earth UI + district bridge",
+      "hostname_live": "penguin",
+      "dns": "keithdickey207-1.tail28a28c.ts.net",
+      "online": true,
+      "lan_ip": "100.125.221.112",
+      "ip": "100.125.221.112",
+      "syncthing_id": "3RDAWIT-2H2BGM4-MMAU347-6YI5NJ3-FWQG454-TBGGJNG-NUAPYZW-UUMP7AI"
+    },
+    "penguin-1": {
+      "role": "gns_standby",
+      "tailscale_ip": "100.95.99.98",
+      "hostname": "keithdickey207",
+      "platform": "linux",
+      "status": "online",
+      "services": [
+        "gns_bridge_standby",
+        "gods_eye_defense"
+      ],
+      "notes": "This host (TS name keithdickey207-1 / system hostname penguin) \u2014 live hub IP",
+      "hostname_live": "penguin",
+      "dns": "keithdickey207-1.tail28a28c.ts.net",
+      "online": true,
+      "lan_ip": "100.115.92.201",
+      "ip": "100.115.92.201",
+      "syncthing_id": "3RDAWIT-2H2BGM4-MMAU347-6YI5NJ3-FWQG454-TBGGJNG-NUAPYZW-UUMP7AI"
+    },
+    "keiths-pixel": {
+      "role": "gnss_node",
+      "tailscale_ip": "100.64.22.60",
+      "hostname": "keiths-pixel",
+      "platform": "android",
+      "status": "online",
+      "services": [
+        "pixel_gnss_shipper"
+      ],
+      "notes": "Primary Pixel (Pixel 10 / keiths-pixel) \u2014 GPS \u2192 UDP 2368 on hub; Gods Eye companion",
+      "exit_node": true,
+      "ship_to": "penguin",
+      "hostname_live": "Keith's pixel ",
+      "dns": "keiths-pixel.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "0001-01-01T00:00:00Z",
+      "alias": "pixel-10"
+    },
+    "pixel-7-pro": {
+      "role": "gnss_node",
+      "tailscale_ip": "100.92.137.116",
+      "hostname": "pixel-7-pro",
+      "platform": "android",
+      "status": "offline",
+      "services": [
+        "pixel_gnss_shipper"
+      ],
+      "notes": "Secondary Pixel \u2014 GPS \u2192 UDP 2368 on hub",
+      "exit_node": true,
+      "ship_to": "penguin",
+      "hostname_live": "Pixel 7 Pro",
+      "dns": "pixel-7-pro.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "2026-07-12T03:52:29.1Z"
+    },
+    "debian": {
+      "role": "linux_peer",
+      "tailscale_ip": "100.76.55.82",
+      "hostname": "debian",
+      "platform": "linux",
+      "status": "offline",
+      "services": [],
+      "notes": "Linux peer \u2014 open Tailscale URL when online",
+      "hostname_live": "debian",
+      "dns": "debian.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "2026-07-04T04:13:48.1Z"
+    },
+    "keithdickey207": {
+      "role": "nas",
+      "tailscale_ip": "100.117.66.12",
+      "hostname": "keithdickey207",
+      "platform": "linux",
+      "status": "offline",
+      "services": [
+        "synology_backup",
+        "git_origin"
+      ],
+      "notes": "Synology / always-on peer \u2014 re-auth Tailscale if expired",
+      "hostname_live": "keithdickey207",
+      "dns": "keithdickey207.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "2026-07-04T22:15:31.1Z"
+    },
+    "pixel-10": {
+      "role": "gnss_node",
+      "tailscale_ip": "100.64.22.60",
+      "hostname": "Keith's pixel",
+      "platform": "android",
+      "status": "online",
+      "services": [
+        "pixel_gnss_shipper",
+        "gods_eye_companion"
+      ],
+      "notes": "Pixel 10 \u2014 companion COP + GNSS shipper \u2192 hub:2368",
+      "exit_node": true,
+      "ship_to": "penguin",
+      "alias_of": "keiths-pixel",
+      "hostname_live": "Keith's pixel ",
+      "dns": "keiths-pixel.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "0001-01-01T00:00:00Z"
+    },
+    "desktop": {
+      "role": "linux_peer",
+      "tailscale_ip": "100.125.221.112",
+      "hostname": "penguin",
+      "platform": "linux",
+      "status": "online",
+      "services": [
+        "gods_eye_client"
+      ],
+      "notes": "Desktop peer \u2014 open Tailscale Gods Eye URLs (hub-hosted)",
+      "hostname_live": "penguin",
+      "dns": "penguin.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "0001-01-01T00:00:00Z"
+    },
+    "laptop": {
+      "role": "linux_peer",
+      "tailscale_ip": "100.76.55.82",
+      "hostname": "debian",
+      "platform": "linux",
+      "status": "offline",
+      "services": [
+        "gods_eye_client"
+      ],
+      "notes": "Laptop \u2014 join Tailscale as laptop-keith then open fabric URL",
+      "hostname_live": "debian",
+      "dns": "debian.tail28a28c.ts.net",
+      "online": false,
+      "last_seen": "2026-07-04T04:13:48.1Z"
+    }
+  },
+  "links": [
+    {
+      "from": "keiths-pixel",
+      "to": "penguin",
+      "type": "gnss_udp",
+      "port": 2368
+    },
+    {
+      "from": "any",
+      "to": "penguin",
+      "type": "gods_eye_defense",
+      "port": 8787
+    },
+    {
+      "from": "any",
+      "to": "penguin",
+      "type": "earth_ui",
+      "port": 5173
+    },
+    {
+      "from": "any",
+      "to": "penguin",
+      "type": "district_bridge_ws",
+      "port": 8765
+    }
+  ],
+  "gods_eye": {
+    "version": "7.2.0",
+    "hub": "penguin",
+    "hub_ip": "100.125.221.112",
+    "urls": {
+      "gods_eye_defense": "http://100.125.221.112:8787/a/ByvNa7wZ82b0FeR3l6Ijcs9vB9tGbVJ0",
+      "gods_eye_defense_health": "http://100.125.221.112:8787/health",
+      "gods_eye": "http://100.125.221.112:5173/gods-eye.html",
+      "earth": "http://100.125.221.112:5173/",
+      "bridge_ws": "ws://100.125.221.112:8765",
+      "command_hub": "http://100.125.221.112:5090",
+      "mesh_live": "http://100.125.221.112:5173/mesh-live.json"
+    },
+    "updated_at": "2026-07-15T21:10:44.527180+00:00",
+    "fabric": "lan_syncthing_multicast",
+    "paid_platforms": false
+  }
+}
