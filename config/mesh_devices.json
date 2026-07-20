@@ -214,7 +214,7 @@
     "hub": "penguin",
     "hub_ip": "100.125.221.112",
     "urls": {
-      "gods_eye_defense": "http://100.125.221.112:8787/a/ByvNa7wZ82b0FeR3l6Ijcs9vB9tGbVJ0",
+      "gods_eye_defense": "http://100.125.221.112:8787/a/gUv6muuqxC5iqD5qg0sr0e1Il3s6LxM0",
       "gods_eye_defense_health": "http://100.125.221.112:8787/health",
       "gods_eye": "http://100.125.221.112:5173/gods-eye.html",
       "earth": "http://100.125.221.112:5173/",
@@ -222,7 +222,7 @@
       "command_hub": "http://100.125.221.112:5090",
       "mesh_live": "http://100.125.221.112:5173/mesh-live.json"
     },
-    "updated_at": "2026-07-15T21:10:44.527180+00:00",
+    "updated_at": "2026-07-18T15:34:55.769614+00:00",
     "fabric": "lan_syncthing_multicast",
     "paid_platforms": false
   }
