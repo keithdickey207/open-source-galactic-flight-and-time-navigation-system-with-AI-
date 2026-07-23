@@ -222,7 +222,7 @@
       "command_hub": "http://100.125.221.112:5090",
       "mesh_live": "http://100.125.221.112:5173/mesh-live.json"
     },
-    "updated_at": "2026-07-18T15:34:55.769614+00:00",
+    "updated_at": "2026-07-23T03:01:39.106939+00:00",
     "fabric": "lan_syncthing_multicast",
     "paid_platforms": false
   }
